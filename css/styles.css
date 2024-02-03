@@ -1,0 +1,311 @@
+	/*REMOVING THE DEFAULT DECORATION FOR LINKS*/
+	a
+	{
+		color:white;
+		text-decoration:none;
+	}
+	a:hover
+	{
+		color:gold;
+	}
+	/* pop up alert for basket loading */
+	.alert {
+		float: right;
+		visibility:hidden;
+		position: relative;
+		color: Chocolate;
+		animation-name: alertAnimation;
+		animation-duration: 4s;
+		animation-delay: -2s;
+	}
+	/* pop up alert for basket loading */
+	.alertNormal {
+		visibility:hidden;
+		color: Chocolate;
+		animation-name: alertAnimation;
+		animation-duration: 4s;
+		animation-delay: -2s;
+	}
+	/*aligning page content*/
+	.alignByColumn, form
+	{
+		display: flex;
+		justify-content: space-evenly;
+		flex-flow: column;
+		align-items: center;
+		height: 100%;
+	}
+	/*CHANGING THR BACKGROUND COLOR AND SETING THE PAGE TO START FROM CORDINATE 0,0 OF THE SCREEN*/
+	body
+	{
+		margin: 0;
+		background-color: #38382d;
+	}
+	/*Puting the position of the table to the middle usinf flex*/
+	#basket-table
+	{
+		display: flex;
+		justify-content: center;
+		width: auto;
+		min-width: 0;
+	}
+	#bio-container
+	{
+		height:100%;
+		width: 100%;
+	}
+	/*creating a button of my type*/
+	button
+	 {
+		background-color: #0e0e02;
+		color: white;
+		padding: 14px 20px;
+		margin: 8px 0;
+		border: none;
+		cursor: pointer;
+		width: 100%;
+	}
+	/*put put content in center */
+	.centerTable
+	{
+		display: flex;
+		justify-content: space-evenly;
+	}
+	/*display titles of div and wrapping if necessary*/
+	.flex-container
+	{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+	/*Using max to auto size whenn page is shrinking*/
+	.flex-container div
+	{
+		margin: 15px;
+		max-height:400px;
+		max-width:400px;
+		position:relative;
+		text-align:center;
+	}
+	/*Stretching the image the to fit the div*/
+	.flex-container div img
+	{
+		width:100%;
+		height:100%;
+	}
+	/* Putting span text in the middle of the image/div and hiding them untill hovered over*/
+	.flex-container div span
+	{
+		opacity:0;
+		width:100%;
+		height:100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	/* Didnt want to assign class to each div so i called it out like this to display the hidden span*/
+	.flex-container div:hover span, .top-header p:hover span
+	{
+		opacity:1;
+		-webkit-transition: opacity .25s ease-in-out .0s;
+		background: rgba(0,0,0,0.5);
+	}
+	.float-container
+	{
+			border: 3px solid #fff;
+			padding: 20px;
+	}
+	/*floating 2 divs side by side*/
+	.float-child
+	{
+			width: 50%;
+			float: left;
+			padding: 20px;
+			border: 2px solid red;
+	}
+	/*setting image to fit the div size and forcing max properties to it*/
+	#img-display
+	{
+		max-width: 100%;
+		width:100%;
+		max-height: 100%;
+		margin: 0;
+		/* The image used to add effect to the bio background when main img cant be filled*/
+		background-image: url("../images/IMG-20210220-WA0001.jpg");
+		  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+	#img-display img
+	{
+		min-width: 0;
+		min-height: 0;
+		max-width: 100%;
+		max-height: 100%;
+		height: auto;
+		width: auto;
+	}
+	/*used to animate the div */
+	@keyframes alertAnimation {
+		0%   {visibility: visible; }
+		100% {  visibility: hidden;}
+	}
+	/*increasing size of the input field*/
+	input[type="number" i]
+	{
+		width:30px;
+	}
+	/*using padding to add space by the top and bottom of text*/
+	label
+	{
+		padding: 10px 0 10px 0;
+	}
+	li
+	{
+		padding:12px 5px;
+	}
+	#login-area
+	{
+		display: flex;
+		justify-content:space-evenly;
+		flex-wrap: wrap;
+	}
+	.login-container, .register-container
+	{
+		width: 42%;
+
+	}
+	/*  div properties to seperate from header and make contents go inside */
+	#main-content
+	{
+		left: 120px;
+		top: 63px;
+		position: absolute;
+		height: calc(100% - 63px);
+		/*subtracting the header width from the screen width*/
+		width: calc(100% - 120px);
+		overflow: auto;
+		overflow-x: hidden;
+		color:white;
+		overflow-y: scroll;
+		/*scrollbar for mozilla*/
+		scrollbar-color:  #888 #38382d;
+		scrollbar-width: thin;
+	}
+	/* LEFT NAV, I USED FLEX DISPLAY TO SEPERATE THE TEXT AND ICONS*/
+	#main-header
+	{
+		width: 120px;
+		position: fixed;
+		height: 100%;
+		overflow: hidden;
+		display:flex;
+		flex-direction: column;
+		justify-content: space-between;
+		text-align:center;
+		z-index:1000;
+		background-color: #0e0e02;
+	}
+	/* Positioning the video on the main page to fill the div because the video dimensions are different */
+	#page-video
+	{
+		left: 50%;
+		min-height: 100%;
+		min-width: 100%;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+	/* changing button to link look alike */
+	.remove
+	{
+		padding: 0;
+		border: none;
+		margin: -10px;
+	}
+	/*changing table properties*/
+	table
+	{
+			width:100%;
+	}
+	table, th, td
+	{
+			border: 5px solid transparent;
+		border-collapse: collapse;
+	}
+	th, td
+	{
+			padding: 15px;
+			text-align: left;
+	}
+	th
+	{
+		color:chocolate;
+	}
+	td h2, td p, td a
+	{
+		font-size: 14px;
+	}
+	td a img
+	{
+		width:64px;
+		height:64px;
+	}
+	/*fixing header to the top */
+	.top-header
+	{
+		text-transform: uppercase;
+		font-size: 14px;
+		position: fixed;
+		left: 120px;
+		width: calc(100% - 120px);
+		color: chocolate;
+		background-color: #0e0e02;
+		z-index: 10;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		font-size: 20px
+	}
+	.top-header p
+	{
+		padding:0 10px 0 10px;
+	}
+	.top-header p span
+	{
+		opacity: 0;
+	}
+	ul
+	{
+		list-style: none;
+		padding: initial;
+	}
+	/*CReating custom scrollbar */
+	/* width */
+	::-webkit-scrollbar
+	{
+		width: 5px;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track
+	{
+		background: #38382d;
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb
+	{
+		background: #888;
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover
+	{
+		background: #555;
+	}
